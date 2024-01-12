@@ -51,15 +51,9 @@ function Signup() {
           </Form.Group>
 
           <div className='d-grid'>
-            <Button type='submit' className='btn btn-success'>
-              Sign Up
-            </Button>
+            <Button type='submit' className='btn btn-success'>Sign Up</Button>
           </div>
-          <p className='text-end mt-2'>
-            Already Registered<Link to='/' className='ms-2'>
-              Sign in
-            </Link>
-          </p>
+          <p className='text-end mt-2'>Already Registered<Link to='/' className='ms-2'>Sign in</Link></p>
         </Form>
       </div>
     </div>
