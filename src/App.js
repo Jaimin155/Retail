@@ -6,40 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element ={<Login/>}></Route>
