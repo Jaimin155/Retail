@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 const Footer=()=>{
     return(
         <div className="footer">
-            <h4 className='text-center'>
-                All Right Reserved &copy; FITF
-            </h4>
-            <p className='text-center mt-3'>
+            <h5 className='text-center'>
+            &copy; 2023 Venditor. All rights reserved.
+            </h5>
+            <p className='text-center mt-1'>
                 <Link to="/about">About Us</Link>
                 |
                 <Link to="/contactus">Contact Us</Link>

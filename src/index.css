@@ -51,7 +51,8 @@
 /*Footer*/
 .footer{
   color:white;
-  padding: 25px;
+  font-size: smaller;
+  padding: 10px;
   background: #000000;
   background: -webkit-linear-gradient(
     to right,
