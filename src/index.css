@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 /*
 .poppins-regular {
   font-family: "Poppins", sans-serif;
@@ -26,6 +21,20 @@
   font-style: normal;
 }
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/*Layout css*/
+.layout{
+  background: #EFF7F8;
+}
+
+
 /*nav bar css*/
 .navbar{
   font-family: "Poppins", sans-serif;
@@ -48,27 +57,28 @@
   font-family: "roboto",sans-serif;
   letter-spacing: 1px;
 }
-/*Footer*/
-.footer{
-  color:white;
-  font-size: smaller;
-  padding: 10px;
-  background: #000000;
-  background: -webkit-linear-gradient(
-    to right,
-    #434343,
-    #000000
-  );
-  background: linear-gradient(to right,#434343,#000000);
+
+
+/*Footer css*/
+.iq-footer{
+  padding: 15px;
+  margin: 0 15px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
+  -moz-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0,3s ease-out 0s;
+  -ms-transition: all 0,3s ease-out 0s;
+  -o-transition: all 0,3s ease-out 0s;
+  transition: all 0,3s ease-out 0s;
 }
-.footer a{
+.iq-footer ul li a{
+  color: #777D74;
+}
+.iq-footer ul li a:hover{
+  color: #089bab;
   text-decoration: none;
-  color: white;
-  padding: 10px;
-}
-.footer a:hover{
-  color: #ffefba;
-  border-bottom: 1px solid #ffefba;
 }
 
 /*Page Not found css*/
