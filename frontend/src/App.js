@@ -1,9 +1,8 @@
 import React from 'react'
-import {Routes,Route}from 'react-router-dom'
-import Layout from './components/Layout/Layout';
+import {Routes,Route}from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Login from './pages/Authentication/Login';
+import Signup from './pages/Authentication/Signup';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import About from './pages/About';
 import Policy from './pages/Policy';
@@ -19,7 +18,7 @@ function App() {
         <Route path="/contactus" element ={<Contactus/>}></Route>
         <Route path="/policy" element ={<Policy/>}></Route>
         <Route path="/*" element ={<Pagenotfound/>}></Route>
-        <Route path="/signup" element ={<Signup/>}></Route>
+        <Route path="/Signup" element ={<Signup/>}></Route>
         <Route path="/Login" element ={<Login/>}></Route>
       </Routes>
     </>

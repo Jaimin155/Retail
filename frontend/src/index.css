@@ -30,14 +30,37 @@
 
 
 /*Layout css*/
-.layout{
-  background: #EFF7F8;
-}
 
+/* .wrapper {
+  background: rgba(8, 155, 171, 1);
+  background: -moz-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(8, 155, 171, 1)), color-stop(100%, rgba(13, 181, 200, 1)));
+  background: -webkit-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+  background: -o-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+  background: linear-gradient(to right, rgba(8, 155, 171, 1) 0%, rgba(13, 181, 200, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#089bab', endColorstr='#0db5c8', GradientType=1);
+} */
+
+.Layout{
+  /* margin-left: 260px;
+  overflow: hidden;
+  padding: 120px 15px 0;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -ms-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s; */
+  background: #eff7f8;
+  /* border-radius: 25px 0 0 25px; */
+}
 
 /*nav bar css*/
 .navbar{
   font-family: "Poppins", sans-serif;
+  margin: 0 0px 20px;
+  border-radius: 15px;
   font-size: 17px;
   line-height: 26px;
   text-transform:uppercase;
@@ -62,7 +85,7 @@
 /*Footer css*/
 .iq-footer{
   padding: 15px;
-  margin: 0 15px 20px;
+  margin: 0 0px 20px;
   border-radius: 25px;
   box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
   -moz-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
@@ -102,4 +125,30 @@
   text-decoration: none;
   padding: 10px;
   margin-top: 10px;
+}
+
+/*Signup CSS*/
+
+.Signup{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 70vh;
+}
+
+.form_container{
+  padding: 50px;
+  border-radius: 25px;
+  background: white;
+  max-width: 1000px;
+  width:25%;
+}
+
+/*Login CSS*/
+
+.Login{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  height: 70vh;
 }

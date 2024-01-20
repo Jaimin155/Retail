@@ -1,17 +1,16 @@
-
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 import {BiMailSend,BiPhoneCall,BiSupport} from 'react-icons/bi'
 const Contactus=()=>{
     return(
-        <Layout>
-            <div className='row contactus'>
+        <Layout title={"Contact Us"}>
+            <div className='row contactus p-4'>
                 <div className='col-md-6'>
                     <img src='/images/contact.jpeg' alt='contact' style={{width:"100%"}}/>
                 </div>
                 <div className='col-md-4'>
                     <h1 className='bg-dark p-2 text-white text-center'>CONTACT US</h1>
-                    <p className='text-justify mt-2'>We value your feedback and are here to assist you 24x7. Whether you have a question, suggestion, or need support, feel free to reach out to us. Our dedicated team is committed to providing timely and helpful responses.</p>
+                    <p className='text-justify'>We value your feedback and are here to assist you 24x7. Whether you have a question, suggestion, or need support, feel free to reach out to us. Our dedicated team is committed to providing timely and helpful responses.</p>
                     <p className='mt-5'>
                         <BiMailSend/>:www.help@Venditor.com
                     </p>
