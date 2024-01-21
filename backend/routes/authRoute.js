@@ -8,9 +8,9 @@ const router=express.Router()
 
 //routing
 //Signup method POST
-router.post('/signup',signupController)
+router.post('/Signup',signupController)
 
 //Login method POST
-router.post('/signin',signinController)
+router.post('/Login',signinController)
 
 export default router
