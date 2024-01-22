@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import Layout from '../../components/Layout/Layout';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -13,12 +13,6 @@ const Signup = () => {
   const [validated, setValidated] = useState(false);
   const Navigate = useNavigate();
   
-  useEffect(() => {
-    const auth = localStorage.getItem('users');
-    if (auth) {
-      Navigate("/");
-    }
-  });
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -30,13 +24,11 @@ const Signup = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/Signup', { name, email, pass });
+      const response = await axios.post('http://localhost:8080/api/v1/auth/signup', { name, email, pass });
       const result = response.data;
-      localStorage.setItem('users', JSON.stringify(result));
-  
       if (result) {
         toast.success('Signup successful');
-        Navigate('/');
+        Navigate('/login');
       }
     } catch (error) {
       console.error('Error during signup:', error);

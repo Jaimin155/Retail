@@ -27,12 +27,11 @@ export const signupController=async(req,res)=>{
         //register user
         const hashedPass=await hashPass(pass)
         //save
-        const user = await new userModel({name,email,pass:hashedPass}).save()
+        const users = await new userModel({name,email,pass:hashedPass}).save()
         res.status(201).send({
             success:true,
             message:'User Registered Successfully',
-            user
-        })
+            users        })
     }
     catch(error){
         console.log(error)
