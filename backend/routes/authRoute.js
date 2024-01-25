@@ -13,4 +13,8 @@ router.post('/signup',signupController)
 //Login method POST
 router.post('/login',signinController)
 
+
+//protected  route auth 
+router.get('/user-auth',requiresignin,(req,res)=>{
+    res.status(200).send({ok:true})})
 export default router

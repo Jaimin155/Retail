@@ -15,7 +15,8 @@ const AuthProvider = ({ children }) => {
         user: parseData.user,
       });
     }
-  }, [auth]);
+    //eslint-disable-next-line(consol gives continous running warning)
+  }, []);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>
       {children}
