@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import Layout from '../../components/Layout/Layout';
 import axios from "axios";
@@ -10,21 +10,22 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const [answer, setAnswer] = useState("");
   const [validated, setValidated] = useState(false);
   const Navigate = useNavigate();
-  
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.currentTarget;
-  
+
     if (form.checkValidity() === false) {
       event.stopPropagation();
       setValidated(true);
       return;
     }
-  
+
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/auth/signup', { name, email, pass });
+      const response = await axios.post('http://localhost:8080/api/v1/auth/signup', { name, email, pass, answer });
       const result = response.data;
       if (result) {
         toast.success('Signup successful');
@@ -33,7 +34,7 @@ const Signup = () => {
     } catch (error) {
       console.error('Error during signup:', error);
       toast.error('Signup failed. Please try again.');
-    }  
+    }
   };
   return (
     <Layout title={"Sign Up"}>
@@ -62,6 +63,7 @@ const Signup = () => {
               <div className='valid-feedback'>Looks Good!</div>
             </Form.Group>
 
+
             <Form.Group className='mb-2' controlId='validationCustom04'>
               <Form.Label>Password</Form.Label>
               <Form.Control
@@ -75,6 +77,17 @@ const Signup = () => {
               <div className='invalid-feedback'>Please provide a valid password.</div>
               <div className='valid-feedback'>Looks Good!</div>
             </Form.Group>
+
+
+            <Form.Group className='mb-2' controlId='validationCustom01'>
+              <Form.Label>Answer</Form.Label>
+              <Form.Control required type='text' placeholder='What is your favorite colour?' className='form-control'
+                value={answer}
+                onChange={(event) => setAnswer(event.target.value)} />
+              <div className='invalid-feedback'>Please provide a valid Name.</div>
+              <div className='valid-feedback'>Looks Good!</div>
+            </Form.Group>
+
 
             <div className='d-grid'>
               <Button type='submit' className='btn btn-success' onClick={handleSubmit}>Sign Up</Button>

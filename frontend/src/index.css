@@ -31,74 +31,81 @@
 
 /*Layout css*/
 
-.Layout{
+.Layout {
   background: #eff7f8;
 }
 
 /*nav bar css*/
-.navbar{
+.navbar {
   font-family: "Poppins", sans-serif;
   border-radius: 15px;
   font-size: 17px;
   line-height: 26px;
-  text-transform:uppercase;
+  text-transform: uppercase;
   box-shadow: 0 8px 6px -6px grey;
-  --webkit-box-shadow:0 8px 6px -6px grey;
+  --webkit-box-shadow: 0 8px 6px -6px grey;
   border-bottom: solid grey !important;
 }
 
-.nav-link{
+.nav-link {
   font-weight: 300 !important;
 }
-.active{
+
+.active {
   border-bottom: 2px solid black;
 }
-.navbar-brand{
+
+.navbar-brand {
   font-weight: 700;
-  font-family: "roboto",sans-serif;
+  font-family: "roboto", sans-serif;
   letter-spacing: 1px;
 }
 
 
 /*Footer css*/
-.iq-footer{
+.iq-footer {
   padding: 15px;
   border-radius: 25px;
   box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
   -moz-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
   -webkit-box-shadow: 0px 0px 12px 0px rgba(55, 73, 72, 0.06);
   -webkit-transition: all 0.3s ease-out 0s;
-  -moz-transition: all 0,3s ease-out 0s;
-  -ms-transition: all 0,3s ease-out 0s;
-  -o-transition: all 0,3s ease-out 0s;
-  transition: all 0,3s ease-out 0s;
+  -moz-transition: all 0, 3s ease-out 0s;
+  -ms-transition: all 0, 3s ease-out 0s;
+  -o-transition: all 0, 3s ease-out 0s;
+  transition: all 0, 3s ease-out 0s;
 }
-.iq-footer ul li a{
+
+.iq-footer ul li a {
   color: #777D74;
 }
-.iq-footer ul li a:hover{
+
+.iq-footer ul li a:hover {
   color: #089bab;
   text-decoration: none;
 }
 
 /*Page Not found css*/
-.pnf{
-  display:flex;
+.pnf {
+  display: flex;
   min-height: 65vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.pnf-title{
+
+.pnf-title {
   font-size: 100px;
   font-weight: 700;
 }
-.pnf-heading{
+
+.pnf-heading {
   font-weight: normal;
 }
-.pnf-btn{
+
+.pnf-btn {
   color: black;
-  border:1px solid black;
+  border: 1px solid black;
   text-decoration: none;
   padding: 10px;
   margin-top: 10px;
@@ -106,26 +113,26 @@
 
 /*Signup CSS*/
 
-.Signup{
+.Signup {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   height: 70vh;
 }
 
-.form_container{
+.form_container {
   padding: 50px;
   border-radius: 25px;
   background: white;
   max-width: 1000px;
-  width:25%;
+  width: 25%;
 }
 
 /*Login CSS*/
 
-.Login{
+.Login {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   height: 70vh;
 }

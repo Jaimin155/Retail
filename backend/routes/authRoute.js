@@ -1,20 +1,22 @@
 import express from "express";
-import {signupController,signinController} from "../controllers/authController.js"
-
+import { signupController, signinController, forgotPasswordController } from "../controllers/authController.js"
 
 //router object
-const router=express.Router()
+const router = express.Router()
 
 
 //routing
 //Signup method POST
-router.post('/signup',signupController)
+router.post('/signup', signupController)
 
 //Login method POST
-router.post('/login',signinController)
+router.post('/login', signinController)
 
+//forgot pass POST
+router.post('/forgot-password', forgotPasswordController)
 
 //protected  route auth 
-router.get('/user-auth',requiresignin,(req,res)=>{
-    res.status(200).send({ok:true})})
+router.get('/user-auth', (req, res) => {
+    res.status(200).send({ ok: true });
+})
 export default router

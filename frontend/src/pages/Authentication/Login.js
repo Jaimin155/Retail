@@ -77,7 +77,7 @@ const Login = () => {
               <Button type='submit' className='btn btn-success' onClick={handleSubmit}> Log in </Button>
             </div>
 
-            <p className='text-end mt-2'>Forgot <a href=''>Password?</a>
+            <p className='text-end mt-2'>Forgot <a href='/forgot-password'>Password?</a>
               <Link to='/signup' className='ms-2' onClick={handleSubmit}> Sign up</Link>
             </p>
           </Form>

@@ -10,6 +10,7 @@ import Pagenotfound from './pages/Pagenotfound';
 import Contactus from './pages/Contactus';
 import Dashboard from './pages/user/Dashboard';
 import PrivateRoute from './components/Routes/Private';
+import ForgotPassword from './pages/Authentication/ForgotPassword';
 function App() {
   return (
     
@@ -21,6 +22,7 @@ function App() {
         </Route>
         <Route path="/signup" element ={<Signup/>}/>
         <Route path="/login" element ={<Login/>}/>
+        <Route path="/forgot-password" element ={<ForgotPassword/>}/>
         <Route path="/about" element ={<About/>}/>
         <Route path="/contactus" element ={<Contactus/>}/>
         <Route path="/policy" element ={<Policy/>}/>

@@ -5,11 +5,11 @@ import { HiMiniShoppingCart } from "react-icons/hi2";
 import toast from 'react-hot-toast';
 
 const Header = () => {
-    const[auth,setAuth]=useAuth();
-    const handleLogout=()=>{
+    const [auth, setAuth] = useAuth();
+    const handleLogout = () => {
         setAuth({
             ...auth,
-            user:null
+            user: null
         })
         localStorage.removeItem("auth");
         toast.success("Logout Successfully");
@@ -30,15 +30,31 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink to="/category" className="nav-link " href="#">Category</NavLink>
                             </li>
-                            { !auth.user?
+                            {!auth.user ?
                                 (<><li className="nav-item">
-                                <NavLink to="/signup" className="nav-link">Signup</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink to="/login" className="nav-link" href="#">Login</NavLink>
-                            </li></>):(<><li className="nav-item">
-                                <NavLink onClick={handleLogout}to="/login" className="nav-link" href="#">Logout</NavLink>
-                            </li></>)
+                                    <NavLink to="/signup" className="nav-link">Signup</NavLink>
+                                </li>
+                                    <li className="nav-item">
+                                        <NavLink to="/login" className="nav-link" href="#">Login</NavLink>
+                                    </li></>) : (<>
+                                        <li className="nav-item dropdown">
+                                            <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {auth?.user?.name}
+                                            </NavLink>
+                                            <ul className="dropdown-menu">
+                                                <li>
+                                                    <NavLink to="/dashboard" className="dropdown-item">
+                                                        Dashboard
+                                                    </NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink onClick={handleLogout} to="/login" className="dropdown-item">
+                                                        Logout
+                                                    </NavLink>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </>)
                             }
                             <li className="nav-item">
                                 <NavLink to="/cart" className="nav-link" href="#">Cart(0)</NavLink>
