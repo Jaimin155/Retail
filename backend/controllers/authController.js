@@ -2,7 +2,7 @@ import { comparePass, hashPass } from "../helpers/authHelper.js";
 import userModel from "../models/userModel.js";
 export const signupController = async (req, res) => {
     try {
-        const { name, email, pass,answer} = req.body
+        const { name, email, pass, answer } = req.body
         //validation
         if (!name) {
             return res.send({ message: 'Name is required' })
@@ -30,7 +30,7 @@ export const signupController = async (req, res) => {
         //register user
         const hashedPass = await hashPass(pass)
         //save
-        const users = await new userModel({ name, email, pass: hashedPass,answer }).save()
+        const users = await new userModel({ name, email, pass: hashedPass, answer }).save()
         res.status(201).send({
             success: true,
             message: 'User Registered Successfully',
@@ -78,7 +78,8 @@ export const signinController = async (req, res) => {
             message: 'login successfully',
             user: {
                 name: user.name,
-                email: user.email
+                email: user.email,
+                role: user.role
             },
         })
     }
@@ -118,8 +119,8 @@ export const forgotPasswordController = async (req, res) => {
         const hashed = await hashPass(newPass)
         await userModel.findByIdAndUpdate(user._id, { pass: hashed });
         res.status(200).send({
-            success:true,
-            message:'Password Reset Successfully'
+            success: true,
+            message: 'Password Reset Successfully'
         })
     }
     catch (error) {
