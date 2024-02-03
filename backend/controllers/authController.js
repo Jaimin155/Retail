@@ -1,5 +1,7 @@
 import { comparePass, hashPass } from "../helpers/authHelper.js";
 import userModel from "../models/userModel.js";
+import JWT from "jsonwebtoken";
+
 export const signupController = async (req, res) => {
     try {
         const { name, email, pass, answer } = req.body
@@ -73,14 +75,20 @@ export const signinController = async (req, res) => {
                 message: 'Invalid Password'
             })
         }
+        //token
+        const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
+            expiresIn: "7d",
+        });
         res.status(200).send({
             success: true,
             message: 'login successfully',
             user: {
+                _id: user._id,
                 name: user.name,
                 email: user.email,
                 role: user.role
             },
+            token,
         })
     }
     catch (error) {
@@ -109,7 +117,8 @@ export const forgotPasswordController = async (req, res) => {
         }
 
         //check email &answer
-        const user = await userModel.findOne({ email, answer })
+        const user = await userModel.findOne({ email, answer });
+        //validation
         if (!user) {
             return res.status(404).send({
                 success: false,
@@ -130,5 +139,15 @@ export const forgotPasswordController = async (req, res) => {
             message: 'Something went wrong',
             error
         })
+    }
+};
+
+//test controller
+export const testController = (req, res) => {
+    try {
+        res.send("Protected Routes");
+    } catch (error) {
+        console.log(error);
+        res.send({ error });
     }
 };

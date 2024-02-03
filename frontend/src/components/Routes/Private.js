@@ -17,8 +17,8 @@ export default function PrivateRoute() {
         setOk(false);
       }
     };
-    if (auth?.user) authCheck();
-  }, [auth?.user]);
+    if (auth?.token) authCheck();
+  }, [auth?.token]);
 
   return ok ? <Outlet /> : <Spinner />;
 }

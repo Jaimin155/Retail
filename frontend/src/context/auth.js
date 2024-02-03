@@ -1,10 +1,16 @@
 import { useState, useEffect, useContext, createContext } from "react";
+import axios from 'axios';
 
 const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({
-    user: null
+    user: null,
+    token: "",
   });
+
+  //default axios
+  axios.defaults.headers.common["Authorization"] = auth?.token;
+
   useEffect(() => {
     const data = localStorage.getItem("auth");
     if (data) {
@@ -12,6 +18,7 @@ const AuthProvider = ({ children }) => {
       setAuth({
         ...auth,
         user: parseData.user,
+        token: parseData.token,
       });
     }
     //eslint-disable-next-line(consol gives continous running warning)

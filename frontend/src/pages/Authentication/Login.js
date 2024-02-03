@@ -31,7 +31,8 @@ const Login = () => {
         toast.success('Login successful');
         setAuth({
           ...auth,
-          user:result.user
+          user:result.user,
+          token:result.token,
         });
         localStorage.setItem('auth',JSON.stringify(result));
         Navigate("/");
