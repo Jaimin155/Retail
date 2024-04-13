@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { useAuth } from '../../context/auth'
 import { HiMiniShoppingCart } from "react-icons/hi2";
+import Searchinput from "../Form/Searchinput"
 import toast from 'react-hot-toast';
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
         setAuth({
             ...auth,
             user: null,
-            token:"",
+            token: "",
         })
         localStorage.removeItem("auth");
         toast.success("Logout Successfully");
@@ -25,6 +26,7 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <Link to="/" className="navbar-brand"><HiMiniShoppingCart /> Venditor</Link>
                         <ul className="navbar-nav ms-auto mb-lg-0">
+                            <Searchinput/>
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link ">Home</NavLink>
                             </li>
@@ -44,7 +46,7 @@ const Header = () => {
                                             </NavLink>
                                             <ul className="dropdown-menu">
                                                 <li>
-                                                    <NavLink to={`/dashboard/${auth?.user?.role===1?"admin":"user"}`} className="dropdown-item">
+                                                    <NavLink to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"}`} className="dropdown-item">
                                                         Dashboard
                                                     </NavLink>
                                                 </li>
