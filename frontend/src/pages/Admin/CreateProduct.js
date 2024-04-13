@@ -10,7 +10,7 @@ const { Option } = Select;
 const CreateProduct = () => {
     const [categories, setCategories] = useState([])
     const navigate = useNavigate();
-    const [image, setImage] = useState("")
+    const [photo, setPhoto] = useState("")
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
@@ -44,7 +44,7 @@ const CreateProduct = () => {
             productData.append("description", description);
             productData.append("price", price);
             productData.append("quantity", quantity);
-            productData.append("image", image);
+            productData.append("photo", photo);
             productData.append("category", category);
             const { data } = axios.post("http://localhost:8080/api/v1/product/create-product", productData);
             if (data?.success) {
@@ -77,14 +77,14 @@ const CreateProduct = () => {
                             </Select>
                             <div className="mb-3">
                                 <label className="btn btn-outline-secondary col-md-12">
-                                    {image ? image.name : "Upload Image"}
-                                    <input type="file" name="image" accept="image/*" onChange={(event) => setImage(event.target.files[0])} hidden />
+                                    {photo ? photo.name : "Upload Photo"}
+                                    <input type="file" name="photo" accept="image/*" onChange={(event) => setPhoto(event.target.files[0])} hidden />
                                 </label>
                             </div>
                             <div className="mb-3">
-                                {image && (
+                                {photo && (
                                     <div className="text-center">
-                                        <img src={URL.createObjectURL(image)} alt="Product Image" height={'200px'} className="img img-responsive" />
+                                        <img src={URL.createObjectURL(photo)} alt="product_photo" height={'200px'} className="img img-responsive" />
                                     </div>)}
                             </div>
                             <div className="mb-3">

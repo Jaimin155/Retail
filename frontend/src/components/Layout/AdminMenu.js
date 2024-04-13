@@ -9,6 +9,7 @@ const AdminMenu = () => {
                 <div className="menu-list">
                     <NavLink to="/dashboard/admin/create-category" className="menu-item" >Create Category</NavLink>
                     <NavLink to="/dashboard/admin/create-product" className="menu-item" >Create Product</NavLink>
+                    <NavLink to="/dashboard/admin/products" className="menu-item" >Products</NavLink>
                     <NavLink to="/dashboard/admin/users" className="menu-item" >Users</NavLink>
                 </div>
             </div>

@@ -195,3 +195,12 @@
 .menu-item.active {
   font-weight: bold;
 }
+
+
+/*product*/
+.product-link{
+
+  text-decoration: none !important;
+  color: black !important;
+  
+}
