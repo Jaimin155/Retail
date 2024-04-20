@@ -79,7 +79,7 @@ const Login = () => {
             </div>
 
             <p className='text-end mt-2'>Forgot <a href='/forgot-password'>Password?</a>
-              <Link to='/signup' className='ms-2' onClick={handleSubmit}> Sign up</Link>
+              <Link to='/signup' className='ms-2'> Sign up</Link>
             </p>
           </Form>
         </div>
