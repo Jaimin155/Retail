@@ -222,4 +222,11 @@
   align-items: center;
   flex-direction: column;
  }
- 
+
+ .card img:hover {
+  transform: scale(0.9);
+}
+
+.card-text {
+  color: rgb(90, 89, 89);
+}

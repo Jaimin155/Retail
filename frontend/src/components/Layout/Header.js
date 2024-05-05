@@ -66,8 +66,10 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                         <Link to="/" className="navbar-brand"><HiMiniShoppingCart /> Venditor</Link>
                         <ul className="navbar-nav ms-auto mb-lg-0">
-                            <Searchinput />
-                            <button className="btn btn-outline-danger mx-2" onClick={toggleRole}>
+                            <div className="d-flex align-items-center ">
+                                <Searchinput />
+                            </div>
+                            <button className="btn btn-outline-danger mx-2 m-1" onClick={toggleRole}>
                                 {buttonText}
                             </button>
                             <li className="nav-item">
